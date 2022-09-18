@@ -1,6 +1,8 @@
 use druid::Data;
 use serde::{Deserialize, Serialize};
 
+use crate::config::EditorConfig;
+
 pub type PanelOrder = im::HashMap<PanelPosition, im::Vector<PanelKind>>;
 
 #[derive(Clone, Copy, PartialEq, Data, Serialize, Deserialize, Hash, Eq, Debug)]
@@ -52,7 +54,7 @@ pub struct PanelData {
 }
 
 impl PanelData {
-    pub fn new(order: PanelOrder) -> Self {
+    pub fn new(order: PanelOrder, editor_config: &EditorConfig) -> Self {
         let size = PanelSize {
             left: 250.0,
             left_split: 0.5,
@@ -82,7 +84,7 @@ impl PanelData {
             PanelPosition::BottomLeft,
             PanelStyle {
                 active: 0,
-                shown: true,
+                shown: editor_config.auto_open_bottom_panel,
                 maximized: false,
             },
         );

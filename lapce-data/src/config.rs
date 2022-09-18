@@ -225,6 +225,10 @@ pub struct EditorConfig {
         desc = "Set the cursor blink interval (in milliseconds). Set to 0 to completely disable."
     )]
     pub blink_interval: u64, // TODO: change to u128 when upgrading config-rs to >0.11
+    #[field_names(
+        desc = "Automatically open bottom panel on start when workspace is not opened."
+    )]
+    pub auto_open_bottom_panel: bool,
 }
 
 impl EditorConfig {

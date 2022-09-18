@@ -26,6 +26,7 @@ error-lens-end-of-line = true
 error-lens-font-family = ""
 error-lens-font-size = 0
 blink-interval = 500 # ms
+auto-open-bottom-panel = true
 
 [terminal]
 font-family = ""

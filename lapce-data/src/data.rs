@@ -765,7 +765,7 @@ impl LapceTabData {
                 panel.order = panel_orders.clone();
                 panel
             })
-            .unwrap_or_else(|| PanelData::new(panel_orders));
+            .unwrap_or_else(|| PanelData::new(panel_orders, &config.editor));
 
         let focus = (*main_split.active).unwrap_or(*main_split.split_id);
 
